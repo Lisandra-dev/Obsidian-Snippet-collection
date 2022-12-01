@@ -429,6 +429,24 @@ settings:
         default-light: "#B69D91"
         default-dark : "#617e8c"
 		opacity: false
+    - 
+        id: bgArchive
+        description: Background
+        format: hex
+        opacity: true
+        type: variable-themed-color
+        title: Archive
+        default-light: "#ffffff00"
+        default-dark: "#ffffff00"
+    -
+        id: FArchive
+        description: Font
+        title: Archive
+        type: variable-themed-color
+        format: hex
+        default-light: "#ffffff00"
+        default-dark: "#ffffff00"
+        opacity: false
 */
 
 :root {
@@ -480,6 +498,8 @@ settings:
     --bg100: #ffffff00;
     --bgZZ: #617e8c2c;
     --normal-folder: #ffffff;
+    --bgArchive: #ffffff00;
+    --FArchive: #ffffff00;
 }
 
 .theme-light {
@@ -513,6 +533,8 @@ settings:
     --bg100: #b69d912c;
     --bgZZ: #b69d912c;
     --normal-folder: #000000;
+    --bgArchive: #ffffff00;
+    --FArchive: #ffffff00;
 }
 
 .nav-file-title,
@@ -544,7 +566,6 @@ body:not(.is-grabbing) .nav-folder-title:hover .nav-folder-collapse-indicator {
 }
 
 .nav-folder-collapse-indicator.collapse-icon svg.right-triangle {
-    background-color: currentColor !important;
     color: currentColor !important;
 }
 
@@ -570,9 +591,11 @@ body:not(.is-grabbing) .nav-folder-title:hover .nav-folder-collapse-indicator {
     top: -1px;
 }
 
+/*
 .nav-folder-children {
     padding-left: 1.9em;
 }
+*/
 
 .nav-file-title.is-active::before {
     margin-top: 2px;
@@ -696,6 +719,10 @@ body:not(.is-grabbing) .nav-folder-title:hover
     color: var(--F00) !important;
 }
 
+[data-path^="00."] .obsidian-icon-folder-icon svg{
+    fill: var(--F00) !important;
+}
+
 .nav-folder.mod-root>.nav-folder-children>.nav-folder>.nav-folder-title[data-path^="00."],
 .nav-folder.mod-root>.nav-folder-children>.nav-folder>.nav-folder-title[data-path^="00."]+.nav-folder-children {
     background-color: var(--bg00);
@@ -723,6 +750,10 @@ body:not(.is-grabbing) .nav-folder-title:hover
 .nav-folder-title[data-path^="10."],
 .nav-file-title[data-path*="10."] {
     color: var(--F10) !important;
+}
+
+[data-path*="10."] .obsidian-icon-folder-icon svg{
+    fill: var(--F10) !important;
 }
 
 .nav-folder.mod-root>.nav-folder-children>.nav-folder>.nav-folder-title[data-path^="10."],
@@ -758,6 +789,13 @@ body:not(.is-grabbing) .nav-folder-title:hover
     color: var(--F20) !important;
 }
 
+[data-path^="20."] .obsidian-icon-folder-icon svg,
+[data-path^="20."][data-path*="21."] .obsidian-icon-folder-icon svg,
+[data-path^="20."][data-path*="22."] .obsidian-icon-folder-icon svg,
+[data-path^="20."][data-path*="23."] .obsidian-icon-folder-icon svg {
+    fill: var(--F20) !important;
+}
+
 .nav-folder.mod-root>.nav-folder-children>.nav-folder>.nav-folder-title[data-path^="20."],
 .nav-folder.mod-root>.nav-folder-children>.nav-folder>.nav-folder-title[data-path^="20."]+.nav-folder-children {
     background-color: var(--bg20);
@@ -786,6 +824,11 @@ body:not(.is-grabbing) .nav-folder-title:hover
 .nav-folder-title[data-path^="30"],
 .nav-file-title[data-path*="30."] {
     color: var(--F30) !important;
+}
+
+[data-path^="30"] .obsidian-icon-folder-icon svg,
+[data-path*="30."] .obsidian-icon-folder-icon svg {
+    fill: var(--F30) !important;
 }
 
 .nav-folder.mod-root>.nav-folder-children>.nav-folder>.nav-folder-title[data-path^="30."],
@@ -817,6 +860,10 @@ body:not(.is-grabbing) .nav-folder-title:hover
     color: var(--F40) !important;
 }
 
+[data-path^="40"] .obsidian-icon-folder-icon svg {
+    fill: var(--F40) !important;
+}
+
 .nav-folder.mod-root>.nav-folder-children>.nav-folder>.nav-folder-title[data-path^="40."],
 .nav-folder.mod-root>.nav-folder-children>.nav-folder>.nav-folder-title[data-path^="40."]+.nav-folder-children {
     background-color: var(--bg40);
@@ -844,6 +891,10 @@ body:not(.is-grabbing) .nav-folder-title:hover
 .nav-folder-title[data-path^="50."],
 .nav-file-title[data-path*="50."] {
     color: var(--F50) !important;
+}
+
+[data-path^="50"] .obsidian-icon-folder-icon svg {
+    fill: var(--F50) !important;
 }
 
 .nav-folder.mod-root>.nav-folder-children>.nav-folder>.nav-folder-title[data-path^="50."],
@@ -875,6 +926,10 @@ body:not(.is-grabbing) .nav-folder-title:hover
     color: var(--F60) !important;
 }
 
+[data-path^="60."] .obsidian-icon-folder-icon svg {
+    fill: var(--F60) !important;
+}
+
 .nav-folder.mod-root>.nav-folder-children>.nav-folder>.nav-folder-title[data-path^="60."],
 .nav-folder.mod-root>.nav-folder-children>.nav-folder>.nav-folder-title[data-path^="60."]+.nav-folder-children {
     background-color: var(--bg60);
@@ -902,6 +957,10 @@ body:not(.is-grabbing) .nav-folder-title:hover
 .nav-folder-title[data-path^="70"],
 .nav-file-title[data-path*="70."] {
     color: var(--F70) !important;
+}
+
+[data-path^="70"] .obsidian-icon-folder-icon svg {
+    fill: var(--F70) !important;
 }
 
 .nav-folder.mod-root>.nav-folder-children>.nav-folder>.nav-folder-title[data-path^="70."],
@@ -933,6 +992,10 @@ body:not(.is-grabbing) .nav-folder-title:hover
     color: var(--F80) !important;
 }
 
+[data-path^="80."] .obsidian-icon-folder-icon svg {
+    fill: var(--F80) !important;
+}
+
 .nav-folder.mod-root>.nav-folder-children>.nav-folder>.nav-folder-title[data-path^="80."],
 .nav-folder.mod-root>.nav-folder-children>.nav-folder>.nav-folder-title[data-path^="80."]+.nav-folder-children {
     background-color: var(--bg80);
@@ -960,6 +1023,10 @@ body:not(.is-grabbing) .nav-folder-title:hover
 .nav-folder-title[data-path^="90."],
 .nav-file-title[data-path*="90."] {
     color: var(--F90) !important;
+}
+
+[data-path^="90."] .obsidian-icon-folder-icon svg {
+    fill: var(--F90) !important;
 }
 
 .nav-folder.mod-root>.nav-folder-children>.nav-folder>.nav-folder-title[data-path^="90."],
@@ -991,6 +1058,10 @@ body:not(.is-grabbing) .nav-folder-title:hover
     color: var(--F100) !important;
 }
 
+[data-path^="100."] .obsidian-icon-folder-icon svg {
+    fill: var(--F100) !important;
+}
+
 .nav-folder.mod-root>.nav-folder-children>.nav-folder>.nav-folder-title[data-path^="100."],
 .nav-folder.mod-root>.nav-folder-children>.nav-folder>.nav-folder-title[data-path^="100."]+.nav-folder-children {
     background-color: var(--bg100);
@@ -1012,17 +1083,27 @@ body:not(.is-grabbing) .nav-folder-title:hover
     filter: saturate(150%);
 }
 
+.theme-light .nav-folder-children .nav-folder-children,
+.theme-dark .nav-folder-children .nav-folder-children {
+    border-left: none;
+}
 
-/* ======================== RESSOURCE - ZZ =================== */
+
+/* ======================== Outils - ZZ =================== */
 
 .nav-folder-title[data-path^="ZZ."],
 .nav-file-title[data-path*="ZZ."] {
     color: var(--FZZ) !important;
 }
 
-.nav-folder-title[data-path^="Ressource"],
-.nav-file-title[data-path*="Ressource"] {
+.nav-folder-title[data-path^="Outils"],
+.nav-file-title[data-path*="Outils"] {
     color: var(--FZZ) !important;
+}
+
+[data-path^="ZZ."] .obsidian-icon-folder-icon svg,
+[data-path^="Outils"] .obsidian-icon-folder-icon svg {
+    fill: var(--FZZ) !important;
 }
 
 .nav-folder.mod-root>.nav-folder-children>.nav-folder>.nav-folder-title[data-path^="ZZ."],
@@ -1030,8 +1111,8 @@ body:not(.is-grabbing) .nav-folder-title:hover
     background-color: var(--bgZZ);
 }
 
-.nav-folder.mod-root>.nav-folder-children>.nav-folder>.nav-folder-title[data-path^="Ressource"],
-.nav-folder.mod-root>.nav-folder-children>.nav-folder>.nav-folder-title[data-path^="Ressource"]+.nav-folder-children {
+.nav-folder.mod-root>.nav-folder-children>.nav-folder>.nav-folder-title[data-path^="Outils"],
+.nav-folder.mod-root>.nav-folder-children>.nav-folder>.nav-folder-title[data-path^="Outils"]+.nav-folder-children {
     background-color: var(--bgZZ);
 }
 
@@ -1045,22 +1126,56 @@ body:not(.is-grabbing) .nav-folder-title:hover
 .theme-light .nav-file-title[data-path^="ZZ."]:hover,
 .theme-light .nav-folder-title.is-active[data-path^="ZZ."],
 .theme-dark .nav-folder-title.is-active[data-path^="ZZ."],
-.theme-light .nav-file-title.is-active[data-path^="Ressource"],
-.theme-dark .nav-file-title.is-active[data-path^="Ressource"],
-.theme-dark .nav-folder-title[data-path^="Ressource"]:hover,
-.colorful-active .nav-file-title.is-active[data-path^="Ressource"],
-.theme-light .nav-folder-title[data-path^="Ressource"]:hover,
-.theme-dark .colorful-active .nav-file-title.is-active[data-path^="Ressource"],
-.theme-light .colorful-active .nav-file-title.is-active[data-path^="Ressource"],
-.theme-dark .nav-file-title[data-path^="Ressource"]:hover,
-.theme-light .nav-file-title[data-path^="Ressource"]:hover,
-.theme-light .nav-folder-title.is-active[data-path^="Ressource"],
-.theme-dark .nav-folder-title.is-active[data-path^="Ressource"] {
+.theme-light .nav-file-title.is-active[data-path^="Outils"],
+.theme-dark .nav-file-title.is-active[data-path^="Outils"],
+.theme-dark .nav-folder-title[data-path^="Outils"]:hover,
+.colorful-active .nav-file-title.is-active[data-path^="Outils"],
+.theme-light .nav-folder-title[data-path^="Outils"]:hover,
+.theme-dark .colorful-active .nav-file-title.is-active[data-path^="Outils"],
+.theme-light .colorful-active .nav-file-title.is-active[data-path^="Outils"],
+.theme-dark .nav-file-title[data-path^="Outils"]:hover,
+.theme-light .nav-file-title[data-path^="Outils"]:hover,
+.theme-light .nav-folder-title.is-active[data-path^="Outils"],
+.theme-dark .nav-folder-title.is-active[data-path^="Outils"] {
     color: var(--FZZ) !important;
     background-color: var(--bgZZ) !important;
     filter: saturate(150%);
 }
 
+
+/* ======== ARCHIVE ================  */
+
+.nav-folder-title[data-path^="Archive"],
+.nav-file-title[data-path*="Archive"] {
+    color: var(--FArchive) !important;
+}
+
+[data-path^="Archive"] .obsidian-icon-folder-icon svg {
+    fill: var(--FArchive) !important;
+}
+
+.nav-folder.mod-root>.nav-folder-children>.nav-folder>.nav-folder-title[data-path^="Archive"],
+.nav-folder.mod-root>.nav-folder-children>.nav-folder>.nav-folder-title[data-path^="Archive"]+.nav-folder-children {
+    background-color: var(--bgArchive);
+}
+
+.theme-light .nav-file-title.is-active[data-path^="Archive"],
+.theme-dark .nav-file-title.is-active[data-path^="Archive"],
+.theme-dark .nav-folder-title[data-path^="Archive"]:hover,
+.theme-light .nav-folder-title[data-path^="Archive"]:hover,
+.colorful-active .nav-file-title.is-active[data-path^="Archive"],
+.theme-dark .colorful-active .nav-file-title.is-active[data-path^="Archive"],
+.theme-light .colorful-active .nav-file-title.is-active[data-path^="Archive"],
+.theme-dark .nav-file-title[data-path^="Archive"]:hover,
+.theme-light .nav-file-title[data-path^="Archive"]:hover,
+.theme-light .nav-folder-title.is-active[data-path^="Archive"],
+.theme-dark .nav-folder-title.is-active[data-path^="Archive"] {
+    color: var(--FArchive) !important;
+    background-color: var(--bgArchive) !important;
+    filter: saturate(150%);
+}
+
+/* ======== LINES ================  */
 
 /* Scrollbars eliminated */
 
@@ -1070,9 +1185,10 @@ body:not(.is-grabbing) .nav-folder-title:hover
 }
 
 
+
 /* Relationship lines for 2nd, 3rd, and 4th level folders */
 
-@media only screen and (max-device-width: 1024px) {
+@media only screen and (max-device-width: 1080px) {
     .relation-active .is-mobile .nav-folder.mod-root {
         overflow: hidden !important;
     }
@@ -1107,6 +1223,9 @@ body:not(.is-grabbing) .nav-folder-title:hover
         border-left: var(--nestlinestyle1) var(--nestlinesize1) var(--nestlinecolor1);
         margin-left: var(--adjust-pc);
     }
+
+
+
     .relation-active .nav-folder.mod-root>.nav-folder-children>.nav-folder>.nav-folder-children>.nav-folder>.nav-folder-children>.nav-folder {
         border-left: var(--nestlinestyle1) var(--nestlinesize1) var(--nestlinecolor1);
         margin-left: var(--adjust-pc);

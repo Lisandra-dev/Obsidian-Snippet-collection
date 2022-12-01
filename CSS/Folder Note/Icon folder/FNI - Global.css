@@ -1,0 +1,79 @@
+.obsidian-icon-folder-icon {
+    position: relative;
+    top: -1px;
+    padding-right: 0.4em !important;
+    padding-left: 4px;
+    border: 0 !important;
+}
+
+.nav-folder-children .nav-folder-children {
+    margin-left: 0 !important;
+    border-left: none;
+    overflow: hidden;
+}
+
+.nav-files-container {
+    overflow-x: hidden;
+}
+
+
+.workspace-split.mod-left-split .nav-files-container,
+.workspace-split.mod-right-split .nav-files-container {
+    padding: 0;
+}
+
+
+.nav-folder.mod-root>.nav-folder-children>.nav-folder>.nav-folder-title>* {
+    padding: 0 0;
+}
+
+.nav-folder.mod-root>.nav-folder-children>.nav-folder>.nav-folder-children>.nav-folder>.nav-folder-children>.nav-folder:not(.alx-empty-folder) .nav-folder-title {
+    position: relative;
+    left: -1.1em;
+}
+
+.nav-folder.mod-root>.nav-folder-children>.nav-folder>.nav-folder-children>.nav-folder>.nav-folder-children>.nav-folder>.nav-folder-children>.alx-empty-folder .nav-folder-title {
+    position: relative;
+    left: 0em;
+}
+
+
+.nav-folder.mod-root>.nav-folder-children>.nav-folder>.nav-folder-children>.nav-folder>.nav-folder-children>.nav-folder>.nav-folder-children>.nav-folder>.nav-folder-children .alx-empty-folder .nav-folder-title {
+    position: relative;
+    left: 0;
+}
+
+.nav-folder.mod-root>.nav-folder-children>.nav-folder>.nav-folder-children>.nav-folder>.nav-folder-children>.nav-folder:not(.alx-empty-folder) .nav-folder-title .nav-folder-collapse-indicator.collapse-icon {
+    left: -0.5em;
+    position: relative;
+}
+
+.nav-folder.mod-root>.nav-folder-children>.nav-folder>.nav-folder-children>.nav-folder>.nav-folder-children>.nav-folder>.nav-folder-children>.nav-folder>.nav-folder-children>.nav-folder .nav-file-title {
+    left: -0.15em !important;
+}
+
+.nav-folder.mod-root>.nav-folder-children>.nav-folder>.nav-folder-children>.nav-folder .nav-folder-title[data-path] .obsidian-icon-folder-icon,
+.nav-folder.mod-root>.nav-folder-children>.nav-folder>.nav-folder-children>.nav-folder .nav-file-title[data-path] .obsidian-icon-folder-icon {
+    padding-left: 5px !important;
+}
+
+.relation-active .nav-folder:not(.mod-root)>.nav-folder-children .nav-file-title {
+    margin-left: 0.5em;
+}
+
+.nav-folder-collapse-indicator.collapse-icon {
+    opacity: 0;
+}
+
+.nav-folder-title {
+    padding-left: 0;
+}
+
+.nav-folder-children .nav-file-title-content:first-child::before {
+    margin-left: 0.25em !important;
+}
+
+.relation-active .nav-folder:not(.mod-root)>.nav-folder-children>.nav-folder>.nav-folder-children .nav-file-title {
+    left: -1.2em !important;
+    position: relative;
+}

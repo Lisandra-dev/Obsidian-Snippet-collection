@@ -1,0 +1,174 @@
+@media only screen and (min-device-width: 1080px) {
+    .nav-folder-children .nav-folder-children {
+        border-left: none;
+    }
+
+    .nav-file-title-content,
+    .nav-folder-title-content {
+        border: none;
+    }
+
+
+    .full-file-names .tree-item-inner,
+    .full-file-names .nav-file-title-content,
+    .full-file-names .nav-folder-title-content,
+    .full-file-names .search-result-file-title {
+        text-overflow: unset;
+        white-space: normal;
+        line-height: 1.4;
+        display: flex;
+        align-items: center;
+    }
+
+    .full-file-names .nav-file-title,
+    .full-file-names .nav-folder-title {
+        margin-bottom: 3px;
+    }
+
+    .tree-item-self .collapse-icon {
+        margin: 0;
+        padding: 0;
+        width: auto;
+    }
+
+    .backlink-pane>.tree-item-self>.collapse-icon {
+        display: none;
+    }
+
+    .tag-container .tree-item-self .collapse-icon {
+        padding-right: 4px;
+    }
+
+    .graph-controls .collapse-icon {
+        font-size: 14px;
+        margin-left: -3px;
+    }
+
+    .cm-fold-widget.collapse-indicator,
+    .markdown-preview-view:not(.allow-fold-headings) .heading-collapse-indicator {
+        display: none !important;
+    }
+}
+
+@media only screen and (max-device-width: 1080px) {
+    .nav-file {
+        padding: 0;
+    }
+
+    .nav-file-title {
+        margin: 0;
+        padding-left: 0;
+    }
+
+    .nav-folder-children .nav-folder-children {
+        border-left: none;
+        margin-left: 0;
+    }
+
+    .nav-file-title-content,
+    .nav-folder-title-content {
+        border: none;
+    }
+
+    .nav-file-title {
+        padding: 0;
+    }
+
+
+    .full-file-names .tree-item-inner,
+    .full-file-names .nav-file-title-content,
+    .full-file-names .nav-folder-title-content,
+    .full-file-names .search-result-file-title {
+        text-overflow: unset;
+        white-space: normal;
+        line-height: 1.4;
+        display: flex;
+        align-items: center;
+    }
+
+    .full-file-names .nav-file-title,
+    .full-file-names .nav-folder-title {
+        margin-bottom: 3px;
+    }
+
+    .tree-item-self .collapse-icon {
+        margin: 0;
+        padding: 0;
+        width: auto;
+    }
+
+    .backlink-pane>.tree-item-self>.collapse-icon {
+        display: none;
+    }
+
+    .tag-container .tree-item-self .collapse-icon {
+        padding-right: 4px;
+    }
+
+    .graph-controls .collapse-icon {
+        font-size: 14px;
+        margin-left: -3px;
+    }
+
+    .cm-fold-widget.collapse-indicator,
+    .markdown-preview-view:not(.allow-fold-headings) .heading-collapse-indicator {
+        display: none !important;
+    }
+
+    .is-mobile .nav-file-title.is-active .nav-file-title-content {
+        line-height: 1.8;
+    }
+
+    .is-mobile .nav-file-title {
+        margin-bottom: 0;
+    }
+
+    .nav-file-title,
+    .nav-folder-title,
+    .is-collapsed .search-result-file-title,
+    .tag-pane-tag {
+        font-weight: normal !important;
+    }
+
+    .is-mobile .nav-file-title.is-active {
+        box-shadow: none !important;
+    }
+
+    .nav-file-title.is-being-dragged,
+    .nav-file-title.is-active,
+    body:not(.is-grabbing) .nav-file-title.is-active:hover {
+        filter: saturate(150%);
+    }
+
+    div.nav-folder.mod-root>div.nav-folder-children>div.nav-folder>div.nav-folder-title>div.nav-folder-collapse-indicator.collapse-icon {
+        margin-left: -2px;
+    }
+
+    div.nav-folder-children>div.nav-folder>div.nav-folder-title>div.nav-folder-collapse-indicator.collapse-icon {
+        margin-left: 0;
+        margin-right: 3px;
+    }
+
+    .nav-folder.mod-root>.nav-folder-title.is-being-dragged-over .nav-folder-title-content {
+        box-shadow: inset 0 -2px hsl(var(--accent-hsl));
+    }
+
+    .nav-folder-title {
+        position: relative;
+        padding-left: 3px;
+        padding-right: 3px;
+        margin-right: 3px;
+    }
+
+    .nav-file-title {
+        position: relative;
+        margin-right: 5px;
+        margin-left: 0px;
+        vertical-align: -2px;
+    }
+
+
+    body.is-mobile:not(.alx-no-click-on-mobile) .nav-folder>.nav-folder-title>.nav-folder-collapse-indicator {
+        width: revert !important;
+    }
+}

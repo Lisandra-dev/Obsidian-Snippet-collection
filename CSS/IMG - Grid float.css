@@ -1,0 +1,848 @@
+/* 
+==============================================================================  
+                            IMAGE FLAGS SNIPPET
+    Credit : Lithou ; Mara-Li
+    Source : http://github.com/lithou/sandbox
+    Allow to use image in multiple way ; See more in Lithou Sandbox.
+    This edition work with Live Preview in a hacky way.
+============================================================================== */
+
+
+img.image-embed
+{
+  --coremarg: 1%;
+  --extramarg: 1%;
+  /* This margin is used for any added margin between items */
+  --defaultwidth: 60%;
+  /*This is the default width for core flags such as the "side" and "tape" */
+  --minwidth: 50px;
+  /* This specifies the minimum width that %based width images will go to*/
+  --defaultzoomwidth: 100%;
+  /* this specifies the default width when an image is zoomed in (usually set active which is clicking with mouse) */
+  --defaultscale: 1.5;
+  /* this specifies the default ratio that an image is zoomed in (usually set to hover) */
+}
+
+span.internal-embed.image-embed.is-loaded {
+  display: inherit !important;
+}
+
+/* Core Flags */
+
+.image-embed[alt*="+"],
+.image-embed[alt*="-"],
+.markdown-source-view.mod-cm6 .cm-content>[contenteditable=false]~.image-embed[alt*="+"]
+{
+  contain: revert !important;
+}
+
+
+/*side */
+
+img[alt*="+side"] {
+  width: 20em;
+  min-width: var(--minwidth);
+  float: right;
+  margin: 0px;
+  margin-left: var(--coremarg) !important;
+}
+
+img[alt*="+rside"] {
+  width: 15em;
+  min-width: var(--minwidth);
+  float: left;
+  margin: 0;
+  margin-right: 5px;
+}
+
+img[alt="+center"] {
+    padding-left: 20%;
+}
+
+/*tape */
+
+img[alt*="+tape"] {
+  position: relative;
+  float: right;
+  width: var(--defaultwidth);
+  min-width: var(--minwidth);
+  margin: auto;
+  margin-left: var(--coremarg);
+  transform: rotate(2deg);
+}
+
+img[alt*="+tape"]::before::before {
+  content: "";
+  position: absolute;
+  margin: auto;
+  width: 30%;
+  height: 14%;
+  top: -7%;
+  left: 35%;
+  background: rgba(255, 234, 118, 0.377);
+  /*here you can chosse the scotch tape background*/
+  clip-path: polygon(
+    50% 0%,
+    100% 0%,
+    98% 10%,
+    100% 20%,
+    98% 30%,
+    100% 40%,
+    98% 50%,
+    100% 60%,
+    98% 70%,
+    100% 80%,
+    98% 90%,
+    100% 100%,
+    0% 100%,
+    2% 90%,
+    0% 80%,
+    2% 70%,
+    0% 60%,
+    2% 50%,
+    0% 40%,
+    2% 30%,
+    0% 20%,
+    2% 10%,
+    0% 0%
+  );
+}
+
+/* Push Pin */
+
+img[alt*="+pin"] {
+  position: relative;
+  float: right;
+  width: 20em;
+  min-width: var(--minwidth);
+  margin: auto;
+  margin-left: var(--coremarg);
+  -webkit-transform: rotate(0deg);
+  -moz-transform: rotate(0deg);
+  -o-transform: rotate(0deg);
+  -ms-transform: rotate(0deg);
+  transform: rotate(3deg);
+}
+
+img[alt*="+pin"]::before {
+  content: "";
+  position: absolute;
+  width: 5px;
+  height: 5px;
+  background-color: #4588cc;
+  top: -3%;
+  left: 50%;
+  border: solid #336699 8px;
+  border-radius: 50%;
+  box-shadow: #274d74 -5px 3px 1px;
+}
+
+/* Portrait and Landscape */
+
+img[alt*="+portrait"] {
+  float: right;
+  position: relative;
+  width: calc(var(--defaultwidth) / 1.5);
+  min-width: var(--minwidth);
+  vertical-align: top;
+  border: solid 5px;
+  background-color: black;
+  /*this is the "border colour around the image */
+  clip-path: ellipse(40% 45% at 50% 50%);
+}
+
+img[alt*="+landscape"] {
+  position: relative;
+  width: var(--defaultwidth);
+  min-width: var(--minwidth);
+  float: right;
+  border: solid 3px;
+  background-color: black;
+  /* This setting will create a border effect of set color */
+  clip-path: ellipse(45% 35% at 50% 50%);
+}
+
+/* Banner and HR */
+
+img[alt*="+banner"] {
+  display: block;
+  height: 100px;
+  overflow: hidden;
+}
+
+img[alt*="+banner"] > img {
+  margin-top: -130px;
+}
+
+img[alt*="+hr"] {
+  display: block;
+  height: 10px;
+  overflow: hidden;
+  border-radius: 20px;
+}
+
+img[alt*="+hr"] > img {
+  margin-top: -200px;
+}
+
+/*Custom Core Flags */
+
+img[alt*="+right"] {
+  position: relative;
+  left: 50%;
+}
+
+img[alt*="+block"] {
+  display: block;
+}
+
+/* Modifier Flags */
+
+/* Orientation and position */
+
+img[alt*="-left"] {
+  float: left;
+  margin: 0px;
+  margin-right: var(--extramarg);
+}
+
+img[alt*="-right"] {
+  float: right;
+  margin: 0px;
+  margin-left: var(--extramarg);
+}
+
+img[alt*="-fix"] {
+  position: fixed;
+}
+
+img[alt*="-abs"] {
+  position: absolute;
+}
+
+/* Size */
+
+img[alt*="-thumb"] {
+  width: 6rem;
+}
+
+img[alt*="-sm"] {
+  width: 13rem;
+}
+
+img[alt*="-med"] {
+  width: 18rem;
+}
+
+img[alt*="-lg"] {
+  width: 27rem;
+}
+
+img[alt*="-huge"] {
+  width: 37rem;
+}
+
+img[alt*="-cwidth"] {
+  float: none;
+  margin-left: -10%;
+  width: 67rem;
+}
+
+/* Borders */
+
+img[alt*="-border1"] {
+  border: solid black 3px;
+}
+
+img[alt*="-border2"] {
+  border: solid white 3px;
+}
+
+img[alt*="-bradius1"] {
+  border-radius: 5px;
+}
+
+img[alt*="-bradius2"] {
+  border-radius: 20px;
+}
+
+img[alt*="-bradiustl"] {
+  border-top-left-radius: 20px;
+}
+
+img[alt*="-bradiusbr"] {
+  border-bottom-right-radius: 20px;
+}
+
+img[alt*="-bradiustr"] {
+  border-top-right-radius: 20px;
+}
+
+img[alt*="-bradiusbl"] {
+  border-bottom-left-radius: 20px;
+}
+
+img[alt*="-bthick"] {
+  border-width: 5px;
+}
+
+img[alt*="-bthin"] {
+  border-width: 1px;
+}
+
+/* Shadows */
+
+img[alt*="-shadow1"] > img {
+  box-shadow: darkgrey -2px 2px 2px;
+}
+
+img[alt*="-glow"] {
+  box-shadow: darkgrey 0px 0px 20px;
+}
+
+img[alt*="-nofloat"] {
+  display: inline-block;
+  float: none;
+}
+
+/* zoom and reverse rotate on hover */
+
+img[alt*="+tape"]:not(:active):hover,
+img[alt*="+pin"]:not(:active):hover {
+  transform: scale(1.5) rotate(-2deg);
+}
+
+/* Grid View */
+
+span[alt*="+grid"] {
+  display: table-cell;
+  vertical-align: middle;
+  padding: 3px;
+}
+
+.workspace-leaf-content[data-mode="source"] img[alt*="+grid"] {
+  width: 20em;
+}
+
+/* Grid View Alternative
+
+/* I'm adding explaination commments here so you know how this works.
+
+I'm also writing this so next time I edit this code I don't forget why
+I did it this way and sit there confused for 30mins trying to figure it out.
+
+BTW. Hello future Lithou. If you're reading this: You're welcome
+
+How it works:
+This applies to an image if two conditions are met.
+First condition is if the page has a css class of "grid"
+Second conditions is if no pipe is used when calling an image
+
+examples:
+![[test.jpg|alt text]] <-- will not apply as pipe used to make custom alt text
+![[test.jpg]] <-- will apply since no pipe used
+
+When no pipe is used, no alt attribute is called by the user.
+Obsidian will therefore set the alt attribute equal to the file name. (this is default if it changes, this will pobably break so look here first if it stops working)
+This rule will target any image with an alt attribute that has a period in it.
+Since all image files should follow "name.extension" all will contain a period.
+
+Note: One key to keep in mind is to not use a period as part of any other img flags. */
+
+.img-grid img.image-embed[alt*="."] {
+  display: table-cell;
+  vertical-align: middle;
+  padding: 3px;
+}
+
+.img-grid img[alt*="."] {
+  max-height: 30vh;
+}
+
+.theme-dark,
+.theme-light {
+  /*Sizes*/
+  --radius: 0px;
+  --micro: 70px;
+  --tiny: 100px;
+  --small: 200px;
+  --small-med: 300px;
+  --med-small: 400px;
+  --medium: 500px;
+  --med-tall: 600px;
+  --tall: 700px;
+}
+
+/*----Mobile----*/
+@media (max-width: 500px) {
+
+  .theme-dark,
+  .theme-light {
+    /*Mobile Sizes*/
+    --radius: 0px;
+    --micro: 70px;
+    --tiny: 100px;
+    --small: 150px;
+    --small-med: 200px;
+    --med-small: 250px;
+    --medium: 300px;
+    --med-tall: 450px;
+    --tall: 500px;
+  }
+}
+
+/*----<i alt=""></i>----*/
+i {
+  display: block;
+  font-style: unset;
+  color: var(--text-normal);
+  text-align: center;
+  background-color: var(--background-secondary-alt);
+  padding: 0 1em;
+}
+
+i[alt*="right"] {
+  display: block;
+  text-align: right;
+  background-color: var(--background-secondary-alt);
+  padding-right: .8em;
+}
+
+
+i[alt*="left"] {
+  display: block;
+  text-align: left;
+  background-color: var(--background-secondary-alt);
+  padding-left: .8em;
+}
+
+i[alt*="clear"] {
+  clear: both;
+}
+
+i[alt*="nobg"] {
+  background-color: transparent;
+}
+
+
+
+/*----Image Positions/Adjustments----*/
+/*Captions*/
+.img-cap .image-embed::after,
+.image-embed[src*="#cap"]::after {
+  content: attr(alt);
+  color: var(--inactive);
+  display: block;
+  text-align: center;
+}
+
+/* Lithou's Img-Grid CSS */
+.img-grid span.image-embed[alt*="."],
+span.image-embed[src*=grid],
+span.image-embed[alt*=grid],
+img[alt*=grid] {
+  display: table-cell;
+  vertical-align: middle;
+  padding: 3px;
+}
+
+.img-grid img[alt*="."],
+.image-embed[alt*=grid],
+img[alt*=grid],
+.image-embed[src*="#grid"] {
+  max-height: 30vh;
+}
+
+.img-grid img[alt*="."]:hover,
+.image-embed[src*="#grid"]:hover,
+.image-embed[src*="#grid"]:hover,
+img[alt*=grid]:hover {
+  transform: scale(1.5);
+}
+
+/*Invert Colors*/
+.theme-dark img[alt*=invertb],
+.theme-dark .image-embed[src*="#invertb"] {
+  filter: invert(1) hue-rotate(180deg);
+}
+
+.theme-light img[alt*=invertw],
+.theme-light .image-embed[src*="#invertw"] {
+  filter: invert(1) hue-rotate(180deg);
+}
+
+.theme-dark img[alt*=invertbc],
+.theme-dark .image-embed[src*="#invertbc"] {
+  filter: invert(1) hue-rotate(180deg) contrast(1.5);
+}
+
+.theme-light img[alt*=invertwc],
+.theme-light .image-embed[src*="#invertwc"] {
+  filter: invert(1) hue-rotate(180deg) contrast(1.45);
+}
+
+/*Fix Float Issues*/
+img[alt*=clear],
+.image-embed[src*="#clear"] {
+  clear: both;
+}
+
+img[alt*=unclr],
+.image-embed[src*="#unclr"] {
+  clear: none !important;
+}
+
+/*Round Image*/
+img[alt*=circle] {
+  border-radius: 50%;
+}
+
+/*Center Image*/
+img:is([alt*="ctr"], [alt*="center"]),
+.image-embed[src*="#ctr"] .image-embed[alt*=ctr],
+.image-embed[src*="#center"] .image-embed[alt*=center],
+.imgctr img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/*--Simplified Version--*/
+/*Image Locations*/
+/*Left & Right*/
+body .popover.hover-popover img[alt*=left],
+body .popover.hover-popover img[alt*=locl],
+body .popover.hover-popover img[src*="#locl"] img,
+body .popover.hover-popover .image-embed[alt*=left],
+body .popover.hover-popover .image-embed[alt*=locl],
+body .popover.hover-popover .image-embed[src*="#locl"] img,
+body span:not(.is-live-preview) img[alt*=left],
+body span:not(.is-live-preview) img[alt*=locl],
+body span:not(.is-live-preview) img[src*="#locl"] img,
+body span:not(.is-live-preview) .image-embed[alt*=left],
+body span:not(.is-live-preview) .image-embed[alt*=locl],
+body span:not(.is-live-preview) .image-embed[src*="#locl"] img {
+  float: left;
+  margin-right: 2%;
+  margin-top: 0px;
+  margin-bottom: 0px;
+}
+
+body .popover.hover-popover img[alt*=right],
+body .popover.hover-popover img[alt*=locr],
+body .popover.hover-popover img[src*="#locr"] img,
+body .popover.hover-popover .image-embed[alt*=right],
+body .popover.hover-popover .image-embed[alt*=locr],
+body .popover.hover-popover .image-embed[src*="#locr"] img,
+body span:not(.is-live-preview) img[alt*=right],
+body span:not(.is-live-preview) img[alt*=locr],
+body span:not(.is-live-preview) img[src*="#locr"] img,
+body span:not(.is-live-preview) .image-embed[alt*=right],
+body span:not(.is-live-preview) .image-embed[alt*=locr],
+body span:not(.is-live-preview) .image-embed[src*="#locr"] img {
+  float: right;
+  margin-left: 2%;
+  margin-bottom: 0px;
+}
+
+
+/*Image Shapes*/
+/*Banners*/
+img[alt*="banner"],
+.image-embed[alt*="banner"] img,
+.image-embed[src*="#banner"] {
+  display: block;
+  object-fit: cover;
+  height: var(--small);
+  width: 100%;
+  margin-bottom: 0px;
+  clear: both;
+}
+
+img[alt*="banner+small"],
+.image-embed[alt*="banner+small"] img,
+.image-embed[src*="#banner+small"] {
+  display: block;
+  object-fit: cover;
+  height: var(--tiny);
+  width: 100%;
+  margin-bottom: 0px;
+  clear: both;
+}
+
+img[alt*="banner+tall"],
+.image-embed[alt*="banner+tall"] img,
+.image-embed[src*="#banner+tall"] {
+  display: block;
+  object-fit: cover;
+  height: var(--medium);
+  width: 100%;
+  margin-bottom: 0px;
+  clear: both;
+}
+
+
+
+/*Portait*/
+img[alt*="+portrait"],
+.image-embed[alt*="+portrait"] img,
+.image-embed[src*="#+portrait"] {
+  object-fit: cover;
+  height: var(--small-med);
+  width: 40%;
+}
+
+img[alt*="+portrait+small"],
+.image-embed[alt*="+portrait+small"] img,
+.image-embed[src*="#+portrait+small"] {
+  height: var(--small);
+  width: 20%;
+  object-fit: cover;
+}
+
+img[alt*="+portrait+tall"],
+.image-embed[alt*="+portrait+tall"] img,
+.image-embed[src*="#+portrait+tall"] {
+  height: 500px;
+  width: 50%;
+  object-fit: cover;
+}
+
+/*Profile*/
+img[alt*="profile"],
+.image-embed[alt*="profile"] img,
+.image-embed[src*="#profile"] {
+  object-fit: cover;
+  height: var(--tiny);
+  width: var(--tiny);
+}
+
+img[alt*="profile+medium"],
+.image-embed[alt*="profile+medium"] img,
+.image-embed[src*="#profile+medium"] {
+  object-fit: cover;
+  height: var(--small);
+  width: var(--small);
+}
+
+img[alt*="profile+tall"],
+.image-embed[alt*="profile+tall"] img,
+.image-embed[src*="#profile+tall"] {
+  object-fit: cover;
+  height: var(--medium);
+  width: var(--medium);
+}
+
+/*--Customizable Version--*/
+/*-Image Sizing-*/
+
+/*Fit image within bounds WITHOUT stretching*/
+img[alt*="cover"],
+.image-embed[src*="#cover"],
+span.image-embed[src*="#cover"] img,
+img[alt*="cvr"],
+.image-embed[src*="#cvr"],
+span.image-embed[src*="#cvr"] img {
+  object-fit: cover;
+}
+
+/*Height*/
+img[alt*="hmicro"],
+.image-embed[src*="#hmicro"] img {
+  height: var(--micro);
+}
+
+img[alt*="htiny"],
+.image-embed[src*="#htiny"] img {
+  height: var(--tiny);
+}
+
+img[alt*="hsmall"],
+.image-embed[src*="#hsmall"] img {
+  height: var(--small);
+}
+
+img[alt*="hs-med"],
+.image-embed[src*="#hs-med"] img {
+  height: var(--small-med);
+}
+
+img[alt*="hm-sm"],
+.image-embed[src*="#hs-sm"] img {
+  height: var(--med-small);
+}
+
+img[alt*="hmed"],
+.image-embed[src*="#hmed"] img {
+  height: var(--medium);
+}
+
+img[alt*="hm-tl"],
+.image-embed[src*="#hm-tl"],
+.image-embed[src*="#hm-tl"] img {
+  height: var(--med-tall);
+}
+
+img[alt*="htall"],
+.image-embed[src*="#htall"] img {
+  height: var(--tall);
+}
+
+/*Width*/
+img[alt*="wmicro"],
+.image-embed[src*="#wmicro"] img,
+.image-embed[alt*="#wmicro"]::after {
+  width: var(--micro);
+}
+
+img[alt*="wtiny"],
+.image-embed[src*="#wtiny"] img,
+.image-embed[src*="#wtiny"]::after {
+  width: var(--tiny);
+}
+
+img[alt*="wsmall"],
+.image-embed[src*="#wsmall"] img,
+.image-embed[src*="#wsmall"]::after {
+  width: var(--small);
+}
+
+img[alt*="ws-med"],
+.image-embed[src*="#ws-med"] img,
+.image-embed[src*="#ws-med"]::after {
+  width: var(--small-med);
+}
+
+img[alt*="wm-sm"],
+.image-embed[src*="#wm-sm"] img,
+.image-embed[src*="#wm-sm"]::after {
+  width: var(--med-small);
+}
+
+img[alt*="wmed"],
+.image-embed[src*="#wmed"] img,
+.image-embed[src*="#wmed"]::after {
+  width: var(--medium);
+}
+
+img[alt*="wm-tl"],
+.image-embed[src*="#wm-tl"] img,
+.image-embed[src*="#wm-tl"]::after {
+  width: var(--med-tall);
+}
+
+img[alt*="wtall"],
+.image-embed[src*="#wtall"] img,
+.image-embed[src*="#wtall"]::after {
+  width: var(--tall);
+}
+
+
+/*--Image Position--*/
+img[alt*="p+"],
+.image-embed[src*="#p+"] img {
+  object-fit: cover;
+}
+
+/*Inner Image*/
+img[alt*="p+c"],
+.image-embed[src*="#p+c"] img {
+  object-position: center;
+}
+
+img[alt*="p+t"],
+.image-embed[src*="#p+t"] img {
+  object-position: top;
+}
+
+img[alt*="p+b"],
+.image-embed[src*="#p+b"] img {
+  object-position: bottom;
+}
+
+img[alt*="p+l"],
+.image-embed[src*="#p+l"] img {
+  object-position: left;
+}
+
+img[alt*="p+r"],
+.image-embed[src*="#p+r"] img {
+  object-position: right;
+}
+
+
+img[alt*="p+cl"],
+.image-embed[src*="#p+cl"] img {
+  object-position: 15%;
+}
+
+img[alt*="p+ccl"],
+.image-embed[src*="#p+ccl"] img {
+  object-position: 25%;
+}
+
+img[alt*="p+cr"],
+.image-embed[src*="#p+cr"] img {
+  object-position: 60%;
+}
+
+img[alt*="p+ccr"],
+.image-embed[src*="#p+ccr"] img {
+  object-position: 75%;
+}
+
+img[alt*="p+tc"],
+.image-embed[src*="#p+tc"] img {
+  object-position: 50% 10%;
+}
+
+img[alt*="p+tcc"],
+.image-embed[src*="#p+tcc"] img {
+  object-position: 50% 20%;
+}
+
+img[alt*="p+cct"],
+.image-embed[src*="#p+cct"] img {
+  object-position: 50% 30%;
+}
+
+img[alt*="p+ct"],
+.image-embed[src*="#p+ct"] img {
+  object-position: 50% 40%;
+}
+
+img[alt*="p+cb"],
+.image-embed[src*="#p+cb"] img {
+  object-position: 50% 60%;
+}
+
+img[alt*="p+ccb"],
+.image-embed[src*="#p+ccb"] img {
+  object-position: 50% 70%;
+}
+
+img[alt*="p+bc"],
+.image-embed[src*="#p+bc"] img {
+  object-position: 50% 80%;
+}
+
+img[alt*="p+bcc"],
+.image-embed[src*="#p+bcc"] img {
+  object-position: 50% 90%;
+}
+
+
+/*--Image Shapes--*/
+/*Banners*/
+img[alt*="sban"],
+.internal-embed[src*="#sban"] img {
+  object-fit: cover;
+  width: 100%;
+}
+
+/*Profile*/
+/*Rounded Image*/
+img[alt*="sprf"] {
+  object-fit: cover;
+  border-radius: 100%;
+}

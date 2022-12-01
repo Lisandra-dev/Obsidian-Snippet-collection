@@ -32,39 +32,40 @@
     .nav-file-title svg:not(.right-triangle) {
         margin-left: 2px !important;
     }
-    .alx-empty-folder .nav-folder-title[data-path*="Personnages/"] .nav-folder-title-content,
-    .alx-empty-folder .nav-folder-title[data-path*="Personnages/"] .obsidian-icon-folder-icon {
-        position: relative !important;
-        left: 0.9em !important;
-    }
     .nav-file-title-content,
     .nav-folder-title-content {
         padding-left: 0;
     }
-    .nav-folder-title[data-path*="21. Idées/"] .nav-folder-title-content,
-    .nav-folder-title[data-path*="21. Idées/"] svg:not(.right-triangle),
-    .nav-folder-title[data-path*="22. Personnages/"] .nav-folder-title-content,
-    .nav-folder-title[data-path*="22. Personnages/"] svg:not(.right-triangle) {
+    /* example of folder note */
+    /*
+
+    .alx-empty-folder .nav-folder-title[data-path*="my_folder_path/"] .nav-folder-title-content,
+    .alx-empty-folder .nav-folder-title[data-path*="my_folder_path/"] .obsidian-icon-folder-icon {
+        position: relative !important;
+        left: 0.9em !important;
+    }
+
+    .nav-folder-title[data-path*="22. my_folder_path/"] .nav-folder-title-content,
+    .nav-folder-title[data-path*="22. my_folder_path/"] svg:not(.right-triangle) {
         position: relative !important;
         right: 1.05em;
     }
-    .nav-folder-title[data-path*="21. Idées/"] svg:not(.right-triangle),
-    .nav-folder-title[data-path*="22. Personnages/"] svg:not(.right-triangle) {
+    .nav-folder-title[data-path*="22. my_folder_path/"] svg:not(.right-triangle) {
         vertical-align: middle !important;
     }
-    .alx-folder-with-note .nav-folder-title[data-path*="Illustration"] svg:not(.right-triangle) {
+    .alx-folder-with-note .nav-folder-title[data-path*="another_folder"] svg:not(.right-triangle) {
         margin-left: 0.8em;
         margin-right: 0;
     }
-    .alx-empty-folder>.nav-folder-title[data-path*="22. Personnages/"]>.nav-folder-collapse-indicator {
+    .alx-empty-folder>.nav-folder-title[data-path*="22. my_folder_path/"]>.nav-folder-collapse-indicator {
         right: 30px;
         position: relative;
     }
-    .alx-folder-with-note .nav-folder-title[data-path*="22. Personnages/"] .collapse-icon,
-    .alx-folder-with-note .nav-folder-title[data-path*="21. Idées/"] .collapse-icon {
+    .alx-folder-with-note .nav-folder-title[data-path*="22. my_folder_path/"] .collapse-icon
+    {
         right: 25px !important;
         position: relative !important;
         font-size: calc(var(--size) - 1px) !important;
         padding-left: 1px !important;
-    }
+    }*/
 }
